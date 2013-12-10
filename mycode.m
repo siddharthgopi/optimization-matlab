@@ -33,7 +33,7 @@ s = colones*ktheta;   %create a matrix of kthetas
 s1= colones*k;        %create another matrix of k's
 ytot = s'+(1-delta)*s1';  %this is matrix of -- ktheta + (1-d)k -- minus kt+1 but it is 0
 
-v =(ytot.^(1-gamma)-1)/(1-gamma) %applying the utility function to this matrix
+v =(ytot.^(1-gamma)-1)/(1-gamma) %applying u(c) to this matrix
 
 
 

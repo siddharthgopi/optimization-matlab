@@ -8,7 +8,7 @@ theta = 0.34;
 A= 1 ;
 
 
-%calculate steady state
+% steady state oh shii
 kstar=((1/beta-(1-delta))/(A*theta))^(1/(theta-1));
 
 %intialize k-grid

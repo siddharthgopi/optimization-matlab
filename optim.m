@@ -1,5 +1,5 @@
 clear;
-%GET INPUT FOR ITERATION AND GRID SIZE
+
 iter = input('Dr Alex, please specify number of iterations ')
 gridsize = input('Please specify the size of the k-grid ')
 

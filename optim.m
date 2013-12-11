@@ -3,9 +3,7 @@ clear;
 
 gridsize = input('Please specify a size for the k-grid; ')
 eps = input('Please specify your precision parameter; ')
-=======
 
->>>>>>> 216ad9fe11bbbba6a894e498c815ac5ee8cf9691
 
 % parameters
 beta = 0.96 ;

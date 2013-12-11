@@ -1,11 +1,10 @@
 clear;
 
-<<<<<<< HEAD
+
 gridsize = input('Please specify a size for the k-grid; ')
 eps = input('Please specify your precision parameter; ')
 =======
-iter = input('Dr Alex, please specify number of iterations ')
-gridsize = input('Please specify the size of the k-grid ')
+
 >>>>>>> 216ad9fe11bbbba6a894e498c815ac5ee8cf9691
 
 % parameters

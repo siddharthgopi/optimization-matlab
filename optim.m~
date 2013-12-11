@@ -73,7 +73,7 @@ wish = input('Press ''y'' to view plot ','s');
 if wish == 'y'
     
     
-plot(k,optk',k,k,'linewidth',1)
+plot(k,optk',k,k,,'linewidth',1)
 xlabel('Current capital')
 ylabel('Optimal future capital')
 

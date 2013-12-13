@@ -1,6 +1,6 @@
 clear;
 
-gridsize = input('Dr.Alex, please specify a size for the k-grid; ')
+gridsize = input('Please specify a size for the k-grid; ')
 eps = input('Please specify your precision parameter; ')
 
 % parameters

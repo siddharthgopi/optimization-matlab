@@ -27,9 +27,9 @@ n=length(k);
 %creating a matrix for V0 with proper dimensions
 %first guess assumes all k is immediately consumed
 ktheta =k.^theta;
-colones = ones(n,1);  %create a column vector of ones
-s = colones*ktheta;   %create a matrix of kthetas 
-s1= colones*k;        %create another matrix of k's
+colones = ones(n,1);  
+s = colones*ktheta;   
+s1= colones*k;        
 
 ytot = s'+(1-delta)*s1';  % the resultant matrix here represents -- 
                           % k^theta + (1-d)k - kt+1. But
@@ -47,40 +47,40 @@ C2= (k'.^theta) + (1-delta)*k';    %this particular vector was created to
                                    %help calculate vector representing
                                    %stable arm for later use.
                                    
-U = (C.^(1-gamma)-1)/(1-gamma);  % util levels for each consumption level
+U = (C.^(1-gamma)-1)/(1-gamma);  % util levels for each c level
 
 
 r = U+beta*v;    % adding the time variant part back
-v1 = max(r);     % Row vector of only the maximum of each column of r
+v1 = max(r);     
 
 %The main loop
 change = eps;
 
-while change >= eps             % while distance is above a threshold
-    v1old = v1;                 % assigning v1old to calculate euc.distance later
-    w= ones(n,1)*v1;            % since v1 is a row vector, we make it a matrix
+while change >= eps             
+    v1old = v1;                 
+    w= ones(n,1)*v1;            
     w1 = U+beta*w';             % adding value of carrying forward kt+1_i level of capital
-    v1 = max(w1);               % getting back the v1 vector for next iteration
-    change = norm(v1-v1old,2);  % Finds euclidean distance of vectors
+    v1 = max(w1);               
+    change = norm(v1-v1old,2);  
     
-    change;                     %i turn this on when im playing around with 
-                                % parameter values to see the convergence
+    change;                     %turn this on to observe convergence 
+                                
     
 end
 
 [val,ind] = max(w1); %save the values and corresponding index
 
-optk = k(ind);       %this represents the optimal capital accumulation policy
+optk = k(ind);       %optimal k accumulation policy
 
-optc = C2-optk';     %optimal consumpion values, applied the formula from the 
-                     %langrangian here, transposing optk to get correct
-                     %dimensions
+optc = C2-optk';     %optimal c values 
+                     
+                     
                      
 
 deltak0 = A*k.^theta-delta*k; %represents curve ct = f(kt) - dkt, i.e. change in k is 0
 
-deltac0=deltak0+k-kstar;      %this represents points where,
-                              %change in consumption is 0
+deltac0=deltak0+k-kstar;      %represents points where delta c is 0
+                              
 
                               
 
@@ -92,10 +92,10 @@ if wish == 'y'
     
 figure(1);    
 plot(k,optk',k,k,'linewidth',1); hold on;
-plot(kstar, kstar, 'r+');                        % put a red plus on the solution point
+plot(kstar, kstar, 'r+');                        
 xlabel('Current capital')
 ylabel('Optimal future capital')
-text(kstar+.1,kstar-.1,['k*=' num2str(kstar)]);  % text with solution offset by 0.1 to the right and up
+text(kstar+.1,kstar-.1,['k*=' num2str(kstar)]);  
 title('Optimal Policy function, g(k)')                                          
 
 figure(2);
